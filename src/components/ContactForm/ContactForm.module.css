@@ -1,0 +1,19 @@
+.form {
+    display: flex;
+    gap: 4px;
+}
+
+.field {
+    flex-grow: 1;
+    padding: 8px;
+    font: inherit;
+    border: none;
+    border: 2px solid #221f1f;
+    border-radius: 4px;
+
+    transition: outline-color 300ms ease-in;
+}
+
+.field:focus {
+    outline-color: #b81d24;
+}

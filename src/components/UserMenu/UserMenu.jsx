@@ -12,7 +12,7 @@ export function UserMenu() {
     <nav>
       <section className={css.boxMenu}>
         <p className={css.username}>
-          Welcome, <span className={accentValue}> {user.name}</span>
+          Welcome, <span className={css.accentValue}> {user.name}</span>
         </p>
         <Button
           onClick={() => {

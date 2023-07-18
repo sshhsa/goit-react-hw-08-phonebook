@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useAuth } from 'hooks/useAuth';
+import { useAuth } from 'hooks';
 import css from './Navigation.module.css';
 
 export function Navigation() {
@@ -10,9 +10,11 @@ export function Navigation() {
       <NavLink to="/" className={css.link}>
         Home
       </NavLink>
-      <NavLink to="/contacts" className={css.link}>
-        Contacts
-      </NavLink>
+      {isLoggedIn && (
+        <NavLink to="/contacts" className={css.link}>
+          Contacts
+        </NavLink>
+      )}
     </nav>
   );
 }

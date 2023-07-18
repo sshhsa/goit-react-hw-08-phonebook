@@ -1,0 +1,13 @@
+.boxMenu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.username {
+    font-weight: 700;
+}
+
+.accentValue {
+    color: var(--neutral-accent-clr-1);
+}

@@ -1,0 +1,19 @@
+.form {
+    display: flex;
+    gap: 4px;
+}
+
+.field {
+    flex-grow: 1;
+    padding: 8px;
+    font: inherit;
+    border: none;
+    border: 2px solid var(--main-dark-clr-1);
+    border-radius: var(--default-brd-rad);
+
+    transition: outline-color var(--default-animation);
+}
+
+.field:focus {
+    outline-color: var(--neutral-accent-clr-1)
+}

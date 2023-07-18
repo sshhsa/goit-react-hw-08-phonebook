@@ -11,5 +11,5 @@
 .title {
     margin: 0;
     font-size: 16px;
-    color: #b81d24;
+    color: var(--neutral-accent-clr-1);
 }

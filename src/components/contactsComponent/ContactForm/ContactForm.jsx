@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contacts/operations';
+import { addContact } from '../../../redux/contacts/operations';
 
-import { Button } from 'components/Button/Button';
+import { Button } from 'components/contactsComponent/Button/Button';
 import css from './ContactForm.module.css';
 
 export function ContactForm() {
@@ -15,8 +15,13 @@ export function ContactForm() {
       name: form.elements.name.value.trim(),
       number: form.elements.number.value.trim(),
     };
-    dispatch(addContact(contact));
-    form.reset();
+
+    if (contact.name !== '' && contact.number !== '') {
+      dispatch(addContact(contact));
+      form.reset();
+      return;
+    }
+    alert('Contact can`t be empty. Enter some text!');
   };
 
   return (

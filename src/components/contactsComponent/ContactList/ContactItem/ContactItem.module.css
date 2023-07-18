@@ -25,16 +25,16 @@
 
     background-color: transparent;
 
-    transition: color 300ms ease-in, background-color 300ms ease-in;
+    transition: color var(--default-animation), background-color var(--default-animation);
 }
 
 .btn:hover {
-    color: #f5f5f1;
-    background-color: #e81d29;
+    color: var(--main-light-clr-1);
+    background-color: var(--neutral-accent-clr-2);
 }
 
 .btn:active {
-    background-color: #e81d29;
+    background-color: var(--neutral-accent-clr-2);
 }
 
 .checkbox {

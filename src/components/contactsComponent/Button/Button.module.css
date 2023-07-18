@@ -1,0 +1,26 @@
+.btn {
+    display: inline-flex;
+    padding: 8px 12px;
+    border-radius: var(--default-brd-rad);
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+
+    transition: color var(--default-animation), background-color var(--default-animation)
+}
+
+.btn.isSelected {
+    background-color: var(--neutral-accent-clr-1);
+    color: var(--main-light-clr-1);
+}
+
+.btn:hover {
+    background-color: var(--neutral-accent-clr-1);
+    color: var(--main-light-clr-1);
+}
+
+.btn:active {
+    background-color: var(--neutral-accent-clr-2);
+    color: var(--main-light-clr-1);
+}

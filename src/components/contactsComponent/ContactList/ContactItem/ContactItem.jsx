@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import {
   deleteContact,
   toggleMarked,
-} from '../../../redux/contacts/operations';
+} from '../../../../redux/contacts/operations';
 import PropTypes from 'prop-types';
 import css from './ContactItem.module.css';
 

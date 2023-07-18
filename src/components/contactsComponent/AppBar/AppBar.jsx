@@ -1,5 +1,5 @@
-import { StatusFilter } from 'components/StatusFilter/StatusFilter';
-import { ContactCounter } from 'components/ContactCounter/ContactCounter';
+import { StatusFilter } from 'components/contactsComponent/StatusFilter/StatusFilter';
+import { ContactCounter } from 'components/contactsComponent/ContactCounter/ContactCounter';
 import css from './AppBar.module.css';
 
 export function AppBar() {

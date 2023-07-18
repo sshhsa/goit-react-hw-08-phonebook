@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setStatusFilter } from '../../redux/contacts/filtersSlice';
+import { setStatusFilter } from '../../../redux/filterContacts/filtersSlice';
 
-import { Button } from 'components/Button/Button';
-import { statusFilters } from '../../redux/contacts/constants';
-import { selectStatusFilter } from 'redux/contacts/selectors';
+import { Button } from 'components/contactsComponent/Button/Button';
+import { statusFilters } from '../../../redux/filterContacts/constants';
+import { selectStatusFilter } from 'redux/selectors';
 
 import css from './StatusFilter.module.css';
 

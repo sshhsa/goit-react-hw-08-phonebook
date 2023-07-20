@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../../redux/contacts/operations';
 
@@ -21,7 +22,7 @@ export function ContactForm() {
       form.reset();
       return;
     }
-    alert('Contact can`t be empty. Enter some text!');
+    toast.error('Something went wrong...Try again.');
   };
 
   return (

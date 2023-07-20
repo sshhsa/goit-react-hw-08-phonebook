@@ -7,7 +7,7 @@ export function Loader() {
       <Oval
         height={80}
         width={80}
-        color="#4fa94d"
+        color="#b81d24"
         wrapperStyle={{}}
         wrapperClass=""
         visible={true}
@@ -26,7 +26,7 @@ export function LoaderButton() {
       height="80"
       width="80"
       radius="9"
-      color="#4fa94d"
+      color="#f5f5f1"
       ariaLabel="three-dots-loading"
       wrapperStyle={{}}
       wrapperClassName=""

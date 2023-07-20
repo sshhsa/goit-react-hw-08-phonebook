@@ -3,7 +3,7 @@ import { RegisterForm } from 'components/authComponent/RegisterForm/RegisterForm
 export default function Register() {
   return (
     <div>
-      <title>Registration</title>
+      <h1>Registration</h1>
       <RegisterForm />
     </div>
   );

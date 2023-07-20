@@ -2,15 +2,15 @@
     display: inline-block;
     text-decoration: none;
     padding: 12px;
+
+    border-radius: var(--default-brd-rad);
     font-size: 20px;
     font-weight: 700;
-    color: var(--main-dark-clr-1);
-    background-color: transparent;
 
+    color: var(--main-dark-clr-1);
     transition: color var(--default-animation), background-color var(--default-animation);
 }
 
 .link.active {
-    color: var(--main-light-clr-1);
-    background-color: var(--neutral-accent-clr-1);
+    color: var(--neutral-accent-clr-1);
 }

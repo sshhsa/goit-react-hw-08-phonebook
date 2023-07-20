@@ -1,6 +1,7 @@
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
+import { Loader } from './Loaders/Loaders';
 
 import { Layout } from './Layout/Layout';
 import { PrivateRoute } from './PrivateRoute';
@@ -22,7 +23,9 @@ export function App() {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <div>
+      <Loader />
+    </div>
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -52,6 +55,3 @@ export function App() {
     </Routes>
   );
 }
-
-// 099 147 1922
-// 097 680 1353

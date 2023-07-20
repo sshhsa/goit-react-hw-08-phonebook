@@ -18,7 +18,9 @@ export function UserMenu() {
           onClick={() => {
             dispatch(logOut());
           }}
-        ></Button>
+        >
+          Log 0ut
+        </Button>
       </section>
     </nav>
   );

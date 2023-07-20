@@ -7,7 +7,7 @@ const setToken = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-const removeToken = token => {
+const removeToken = () => {
   axios.defaults.headers.common.Authorization = '';
 };
 
@@ -56,7 +56,7 @@ export const refreshUser = createAsyncThunk(
     }
     setToken(persistedToken);
     try {
-      const response = await axios.get('users/me');
+      const response = await axios.get('users/current');
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

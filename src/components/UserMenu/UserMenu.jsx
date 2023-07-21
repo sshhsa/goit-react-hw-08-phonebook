@@ -11,9 +11,7 @@ export function UserMenu() {
   return (
     <nav>
       <section className={css.boxMenu}>
-        <p className={css.username}>
-          Welcome, <span className={css.accentValue}> {user.name}</span>
-        </p>
+        <p className={css.username}>Welcome, {user.email}</p>
         <Button
           onClick={() => {
             dispatch(logOut());

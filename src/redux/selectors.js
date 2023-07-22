@@ -8,36 +8,54 @@ export const selectFilterContact = state => state.filterContacts;
 export const selectStatusFilter = state => state.filters.status;
 export const selectIsDeleting = state => state.contacts.isDeleting;
 
-export const selectVisibleContacts = createSelector(
-  [selectContacts, selectStatusFilter],
-  (contacts, statusFilter) => {
+// export const selectVisibleContacts = createSelector(
+//   [selectContacts, selectStatusFilter],
+//   (contacts, statusFilter) => {
+//     switch (statusFilter) {
+//       case statusFilters.active:
+//         return contacts.filter(contact => !contact.marked);
+//       case statusFilters.marked:
+//         return contacts.filter(contact => contact.marked);
+//       default:
+//         return contacts;
+//     }
+//   }
+// );
+
+export const selectCombinedContacts = createSelector(
+  [selectContacts, selectStatusFilter, selectFilterContact],
+  (contacts, statusFilter, filterContact) => {
+    const filteredContacts = contacts.filter(({ name }) =>
+      name.toLowerCase().includes(filterContact.toLowerCase())
+    );
+
     switch (statusFilter) {
       case statusFilters.active:
-        return contacts.filter(contact => !contact.marked);
+        return filteredContacts.filter(contact => !contact.marked);
       case statusFilters.marked:
-        return contacts.filter(contact => contact.marked);
+        return filteredContacts.filter(contact => contact.marked);
       default:
-        return contacts;
+        return filteredContacts;
     }
   }
 );
 
-export const selectFilteredContacts = createSelector(
-  [selectContacts, selectFilterContact],
-  (contacts, filterContact) => {
-    return contacts.filter(({ name }) =>
-      name.toLowerCase().includes(filterContact.toLowerCase())
-    );
-  }
-);
+// export const selectFilteredContacts = createSelector(
+//   [selectContacts, selectFilterContact],
+//   (contacts, filterContact) => {
+//     return contacts.filter(({ name }) =>
+//       name.toLowerCase().includes(filterContact.toLowerCase())
+//     );
+//   }
+// );
 
-export const selectCombinedContacts = createSelector(
-  [selectVisibleContacts, selectFilteredContacts],
-  (visibleContacts, filteredContacts) => {
-    const uniqueContacts = new Set([...visibleContacts, ...filteredContacts]);
-    return Array.from(uniqueContacts);
-  }
-);
+// export const selectCombinedContacts = createSelector(
+//   [selectVisibleContacts, selectFilteredContacts],
+//   (visibleContacts, filteredContacts) => {
+//     const uniqueContacts = new Set([...visibleContacts, ...filteredContacts]);
+//     return Array.from(uniqueContacts);
+//   }
+// );
 
 export const selectContactCount = createSelector([selectContacts], contacts => {
   return contacts.reduce(

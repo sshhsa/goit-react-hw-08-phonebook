@@ -15,7 +15,7 @@
 }
 
 .labelContacts {
-    font-size: 26px;
+    font-size: 18px;
     color: var(--neutral-accent-clr-1);
-    margin-bottom: 5px;
+    margin: 10px 0px 5px 0px;
 }

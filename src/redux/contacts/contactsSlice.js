@@ -20,6 +20,7 @@ const contactsSlice = createSlice({
   initialState: {
     items: [],
     isLoading: false,
+    isDeleting: false,
     error: null,
   },
   extraReducers: builder =>

@@ -16,7 +16,7 @@ export function ContactList() {
   const dispatch = useDispatch();
 
   const combinedContacts = useSelector(selectCombinedContacts);
-  const { selectIsDeleting, selectError } = useSelector(selectContacts);
+  const { selectIsDeleting, error } = useSelector(selectContacts);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -24,7 +24,7 @@ export function ContactList() {
 
   return (
     <>
-      {selectError && <p>{selectError}</p>}
+      {error && <p>{error}</p>}
       <ul>
         <FilterContact />
         {combinedContacts.map(contact => (

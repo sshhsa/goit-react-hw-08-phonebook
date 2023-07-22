@@ -1,6 +1,7 @@
 .filterSpan {
-    color: var(--neutral-accent-clr-1);
     margin-bottom: 5px;
+    font-size: 20px;
+    color: var(--neutral-accent-clr-1);
 }
 
 .filterLabel {

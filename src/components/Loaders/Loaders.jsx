@@ -15,6 +15,7 @@ export function Loader() {
         secondaryColor="#f5f5f1"
         strokeWidth={2}
         strokeWidthSecondary={2}
+        className={css.loader}
       />
     </div>
   );

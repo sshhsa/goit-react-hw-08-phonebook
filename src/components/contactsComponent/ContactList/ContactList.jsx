@@ -1,12 +1,16 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 
-import { selectCombinedContacts } from '../../../redux/selectors';
+import {
+  fetchContacts,
+  deleteContact,
+  toggleMarked,
+} from 'redux/contacts/operations';
+import {
+  selectCombinedContacts,
+  selectContacts,
+} from '../../../redux/selectors';
 import { FilterContact } from '../FilterContact/FilterContact';
-import { deleteContact, toggleMarked } from 'redux/contacts/operations';
-import { selectContacts } from '../../../redux/selectors';
-import { fetchContacts } from 'redux/contacts/operations';
 
 import { LoaderButton } from 'components/Loaders/Loaders';
 import css from './ContactList.module.css';

@@ -4,8 +4,9 @@ import { statusFilters } from './filterContacts/constants';
 export const selectContacts = state => state.contacts.items;
 export const selectIsLoading = state => state.contacts.isLoading;
 export const selectError = state => state.contacts.error;
-export const selectFilterContact = state => state.contacts.filterContacts;
+export const selectFilterContact = state => state.filterContacts;
 export const selectStatusFilter = state => state.filters.status;
+export const selectIsDeleting = state => state.contacts.items.id;
 
 export const selectVisibleContacts = createSelector(
   [selectContacts, selectStatusFilter],
@@ -18,6 +19,23 @@ export const selectVisibleContacts = createSelector(
       default:
         return contacts;
     }
+  }
+);
+
+export const selectFilteredContacts = createSelector(
+  [selectContacts, selectFilterContact],
+  (contacts, filterContact) => {
+    return contacts?.filter(({ name }) =>
+      name.toLowerCase().includes(filterContact.toLowerCase())
+    );
+  }
+);
+
+export const selectCombinedContacts = createSelector(
+  [selectVisibleContacts, selectFilteredContacts],
+  (visibleContacts, filteredContacts) => {
+    const uniqueContacts = new Set([...visibleContacts, ...filteredContacts]);
+    return Array.from(uniqueContacts);
   }
 );
 

@@ -14,7 +14,7 @@ export const ContactItem = ({ contact }) => {
   };
 
   const handleToggle = () => {
-    dispatch(toggleMarked(contact));
+    dispatch(toggleMarked(contact.id));
   };
 
   return (

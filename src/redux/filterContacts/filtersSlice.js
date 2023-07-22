@@ -12,8 +12,11 @@ const filtersSlice = createSlice({
     setStatusFilter(state, action) {
       state.status = action.payload;
     },
+    setFilterContact(state, action) {
+      return (state = action.payload);
+    },
   },
 });
 
-export const { setStatusFilter } = filtersSlice.actions;
+export const { setStatusFilter, setFilterContact } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

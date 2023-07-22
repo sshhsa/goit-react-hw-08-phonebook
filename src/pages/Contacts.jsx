@@ -31,7 +31,7 @@ export default function Contacts() {
           <StatusFilter />
         </section>
       </div>
-      <h1>Your tasks</h1>
+      <h1 className={css.labelContacts}>Your contacts</h1>
       <ContactForm />
       <div>{isLoading && <Loader />}</div>
       <ContactList />

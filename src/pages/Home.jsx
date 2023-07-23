@@ -1,21 +1,14 @@
-const styles = {
-  container: {
-    minHeight: 'calc(100vh - 50px)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontWeight: 500,
-    fontSize: 48,
-    textAlign: 'center',
-  },
-};
+import { selectIsLoggedIn } from 'redux/auth/auth-selectors';
+import css from './Page.module.css';
 
 export default function Home() {
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Welcome to Home page</h1>
+    <div className={css.homeBox}>
+      {selectIsLoggedIn ? (
+        <h1 className={css.homeTitle}>Glad to see, welcome back!</h1>
+      ) : (
+        <h1 className={css.homeTitle}>Welcome to Home page</h1>
+      )}
     </div>
   );
 }

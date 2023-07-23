@@ -21,8 +21,9 @@ export function ContactForm() {
       dispatch(addContact(contact));
       form.reset();
       return;
+    } else {
+      toast.error('Something went wrong...Try again.');
     }
-    toast.error('Something went wrong...Try again.');
   };
 
   return (
